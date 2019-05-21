@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class RoomInformation
+public class RoomInformation : MonoBehaviour
 {
     public string roomID;
     [TextArea]

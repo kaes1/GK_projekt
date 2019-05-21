@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField] private string mouseXInputName, mouseYInputName;
+    //[SerializeField] private string mouseXInputName, mouseYInputName;
     [SerializeField] private float mouseSensitivity;
 
-    [SerializeField] private Transform playerBody;
+    public Camera PlayerCamera;
 
     private float xAxisClamp;
 
     private void Awake()
     {
-        LockCursor();
-        xAxisClamp = 0;
-    }
-
-    private void LockCursor()
-    {
+        //Lock cursor.
         Cursor.lockState = CursorLockMode.Locked;
+        xAxisClamp = 0;
     }
 
     private void Update()
@@ -29,8 +25,8 @@ public class PlayerLook : MonoBehaviour
 
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xAxisClamp += mouseY;
 
@@ -47,8 +43,10 @@ public class PlayerLook : MonoBehaviour
             ClampXAxisRotationToValue(90.0f);
         }
 
-        transform.Rotate(-Vector3.right * mouseY);
-        playerBody.Rotate(Vector3.up * mouseX);
+        //For up-down rotate the camera.
+        PlayerCamera.transform.Rotate(-Vector3.right * mouseY);
+        //For left-right rotate the body.
+        this.transform.Rotate(Vector3.up * mouseX);
     }
 
     private void ClampXAxisRotationToValue(float value)

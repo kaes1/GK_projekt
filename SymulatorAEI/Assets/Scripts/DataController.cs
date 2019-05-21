@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DataController : MonoBehaviour
 {
 
-    public RoomInformation[] allRoomInformation;
+    // public RoomInformation[] allRoomInformation;
     //public Dictionary<string, RoomInformation> allRoomInformation;
 
 
@@ -18,14 +18,14 @@ public class DataController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public RoomInformation GetRoomInformation(string roomID)
+    /*public RoomInformation GetRoomInformation(string roomID)
     {
         foreach (RoomInformation ri in allRoomInformation)
             if (ri.roomID.Equals(roomID))
                 return ri;
 
         return null;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()

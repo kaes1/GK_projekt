@@ -6,11 +6,13 @@ public class PlayerRaycasting : MonoBehaviour
 {
     //Distance of the ray used in raycasting.
     public float distanceToSee;
+    //Player's camera.
+    public Camera PlayerCamera;
 
     public GameObject InteractPromptPanel;
     public GameObject InteractDetailsPanel;
 
-    private DataController dataController;
+    //private DataController dataController;
 
     private RaycastHit raycastHitInfo;
     private GameObject lookedAtObject = null;
@@ -19,18 +21,17 @@ public class PlayerRaycasting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dataController = FindObjectOfType<DataController>();
+        //dataController = FindObjectOfType<DataController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Draw the ray used for raycasting.
-        Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
-
+        Debug.DrawRay(PlayerCamera.transform.position, PlayerCamera.transform.forward * distanceToSee, Color.magenta);
         //Use Raycasting to get object hit.
         GameObject objectHit = null;
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out raycastHitInfo, distanceToSee))
+        if (Physics.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, out raycastHitInfo, distanceToSee))
             objectHit = raycastHitInfo.collider.gameObject;
 
         //If something new is being looked at.
@@ -66,13 +67,12 @@ public class PlayerRaycasting : MonoBehaviour
                 //Player interacts with Plaque.
                 if (lookedAtObject.tag == "InteractablePlaque")
                 {
-                   
                     //Display details if they weren't displayed.
                     if (InteractDetailsPanel.activeSelf == false)
                     {
                         InteractPromptPanel.SetActive(false);
                         InteractDetailsPanel.SetActive(true);
-                        RoomInformation roomInfo = dataController.GetRoomInformation(lookedAtObject.GetComponent<Plaque>().roomID);
+                        RoomInformation roomInfo = lookedAtObject.GetComponent<RoomInformation>();
                         if (roomInfo != null)
                             InteractDetailsPanel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = roomInfo.plaqueText;
                         else
