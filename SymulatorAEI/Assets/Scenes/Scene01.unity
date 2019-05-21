@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 69139263}
   m_Layer: 0
   m_Name: Ground (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1296,6 +1296,8 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   verticalInputName: Vertical
   movementSpeed: 6
+  velocityY: 0
+  jumped: 0
 --- !u!114 &627228030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,7 +2187,7 @@ GameObject:
   - component: {fileID: 1109676042}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2747,7 +2749,7 @@ GameObject:
   - component: {fileID: 1584245166}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3135,7 +3137,7 @@ GameObject:
   - component: {fileID: 1827168454}
   m_Layer: 0
   m_Name: Ground (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
