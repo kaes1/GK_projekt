@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ElevatorMovement.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\CameraControls.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\IcoBumpin.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Misc\HueCube.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\EscapeMenu.cs" />
     <Compile Include="Assets\Scripts\Highlight.cs" />
     <Compile Include="Assets\Scripts\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\MyRayCasting.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\PlayerRaycasting.cs" />
