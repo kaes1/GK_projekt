@@ -54,9 +54,8 @@
 					  o.worldNormal = UnityObjectToWorldNormal(normal);
 					  //o.VSNormal = COMPUTE_VIEW_NORMAL;
 					  UNITY_TRANSFER_FOG(o,o.vertex);
-					  float3 viewDir = UNITY_MATRIX_IT_MV[2].xyz;
-
-					  o.Reflection = reflect(-normalize(viewDir), normalize(o.worldNormal));
+					  float3 viewDir = mul(unity_ObjectToWorld, v.vertex).xyz - _WorldSpaceCameraPos;
+					  o.Reflection = reflect(viewDir, normalize(o.worldNormal));
 
 					  return o;
 				  }
