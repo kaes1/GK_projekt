@@ -27,6 +27,15 @@ public class PlayerRaycasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //---
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log(MyOwnRaycasting.CastRay(transform.position, PlayerCamera.transform.forward).name);
+        }
+        Debug.DrawRay(GameObject.Find("Button").transform.position, GameObject.Find("Button").transform.forward);
+        //---
+
+
         //Draw the ray used for raycasting.
         Debug.DrawRay(PlayerCamera.transform.position, PlayerCamera.transform.forward * distanceToSee, Color.magenta);
         //Use Raycasting to get object hit.
