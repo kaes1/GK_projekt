@@ -30,11 +30,8 @@ public class PlayerRaycasting : MonoBehaviour
         //---
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log(MyOwnRaycasting.CastRay(transform.position, PlayerCamera.transform.forward).name);
+            Debug.Log(MyOwnRaycasting.CastRay(transform.position, PlayerCamera.transform.forward, 5.0f).name);
         }
-        Debug.DrawRay(GameObject.Find("Button").transform.position, GameObject.Find("Button").transform.forward);
-        //---
-
 
         //Draw the ray used for raycasting.
         Debug.DrawRay(PlayerCamera.transform.position, PlayerCamera.transform.forward * distanceToSee, Color.magenta);

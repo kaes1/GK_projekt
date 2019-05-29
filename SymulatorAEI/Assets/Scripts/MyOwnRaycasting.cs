@@ -40,10 +40,9 @@ public class MyOwnRaycasting : MonoBehaviour
                 Collider col = obj.GetComponent<Collider>();
                 Vector3 ABC = obj.transform.forward;
                 Vector3 pos = obj.transform.position;
-                float D = -Vector3.Dot(ABC, pos);
+                float D = Mathf.Round(-Vector3.Dot(ABC, pos)*10f)/10f;
                 float licznik = ABC.x * startingPosition.x + ABC.y * startingPosition.y + ABC.z * startingPosition.z + D;
                 float mianownik = Vector3.Dot(ABC, direction);
-                Debug.Log(obj.name +"ABC: "+ ABC +"D: " +D +"LICZ: "+ licznik +"MIAN: "+ mianownik);
 
                 Vector3 intersection_point = startingPosition - direction * licznik / mianownik;
                 float distance = (intersection_point - startingPosition).sqrMagnitude;
