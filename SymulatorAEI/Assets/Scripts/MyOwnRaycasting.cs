@@ -8,7 +8,7 @@ public class MyOwnRaycasting : MonoBehaviour
     public static GameObject CastRay(Vector3 startingPosition, Vector3 direction, float length = Mathf.Infinity)
     {
         GameObject closestObject = null;
-        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("InteractablePlaque");
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Interactable");
 
         float closestDistance = Mathf.Infinity;
 
