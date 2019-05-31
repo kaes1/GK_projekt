@@ -9,32 +9,10 @@ public class MyOwnRaycasting : MonoBehaviour
     {
         GameObject closestObject = null;
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Interactable");
-
         float closestDistance = Mathf.Infinity;
 
         foreach (GameObject obj in allObjects)
         {
-            /* Collider col = obj.GetComponent<Collider>();
-
-             bool hit = false;
-             Vector3 act_pos = startingPosition;
-             float act_dist = 0f;
-             while (act_dist < length && !hit)
-             {
-                 act_dist = Vector3.SqrMagnitude(act_pos - startingPosition);
-                 if (col.bounds.Contains(act_pos))
-                 {
-                     hit = true;                  
-                     if(act_dist < closestDistance)
-                     {
-                         closestDistance = act_dist;
-                         closestObject = obj;
-                     }
-                 }
-                 act_pos += direction.normalized;
-             }*/
-
-
             try
             {
                 Collider col = obj.GetComponent<Collider>();

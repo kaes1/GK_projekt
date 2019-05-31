@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         //if jumped add force to Y axis
         if (Input.GetKeyDown("space") && jumped == false)
         {
-            velocityY += 5;
+            velocityY += 3;
             Debug.Log("JUMP");
             jumped = true;
         }
