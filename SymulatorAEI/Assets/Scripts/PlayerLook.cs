@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    //[SerializeField] private string mouseXInputName, mouseYInputName;
-    [SerializeField] private float mouseSensitivity;
+    //Player's camera.
+    [SerializeField] private Camera PlayerCamera;
 
-    public Camera PlayerCamera;
+    [SerializeField] private float mouseSensitivity;
 
     private float xAxisClamp;
 
@@ -25,8 +25,8 @@ public class PlayerLook : MonoBehaviour
 
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; 
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime; 
 
         xAxisClamp += mouseY;
 
