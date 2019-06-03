@@ -26,16 +26,12 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI DetailsMainText;
     public TextMeshProUGUI DetailsSecondaryText;
 
-    //AudioControl
-    public AudioSource BackroundAudioSource;
-
     //Object currently selected for interaction.
     private GameObject selectedForInteraction;
 
     void Start()
     {
         ResumeGame();
-        BackroundAudioSource.Play();
     }
 
     void Update()
@@ -60,8 +56,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         gameState = GameState.Running;
-
-        BackroundAudioSource.UnPause();
     }
 
     public void PauseGame()
@@ -70,8 +64,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         gameState = GameState.Paused;
-
-        BackroundAudioSource.Pause();
     }
 
     public void GoToMainMenu()
