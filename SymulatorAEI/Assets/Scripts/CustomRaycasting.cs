@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomRaycasting : MonoBehaviour
+public class CustomRaycasting
 {
     public static GameObject Raycast(Vector3 origin, Vector3 direction, float maxDistance)
     {
-        GameObject[] allPlanes = GameObject.FindGameObjectsWithTag("RayDetectionPlane");
+        GameObject[] allPlanes = GameObject.FindGameObjectsWithTag("RaycastingPlane");
 
         float closestDistance = Mathf.Infinity;
         GameObject closestObject = null;
@@ -39,7 +39,7 @@ public class CustomRaycasting : MonoBehaviour
             {
                 closestDistance = t;
                 closestObject = planeObject.transform.parent.gameObject;
-            }    
+            }
         }
 
         return closestObject;
