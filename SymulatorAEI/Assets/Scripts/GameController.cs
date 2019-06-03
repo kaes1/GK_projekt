@@ -29,9 +29,13 @@ public class GameController : MonoBehaviour
     //Object currently selected for interaction.
     private GameObject selectedForInteraction;
 
+    //Background Audio Control
+    public AudioSource BackGroundAudioSource;
+
     void Start()
     {
         ResumeGame();
+        BackGroundAudioSource.Play();
     }
 
     void Update()
@@ -56,6 +60,8 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         gameState = GameState.Running;
+
+        BackGroundAudioSource.UnPause();
     }
 
     public void PauseGame()
@@ -64,6 +70,8 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         gameState = GameState.Paused;
+
+        BackGroundAudioSource.Pause();
     }
 
     public void GoToMainMenu()
