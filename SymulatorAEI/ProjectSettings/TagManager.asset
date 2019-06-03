@@ -8,7 +8,9 @@ TagManager:
   - Fire
   - Ground
   - Interactable
+  - RaycastingPlane
   - RayDetectionPlane
+  - InteractableButton
   layers:
   - Default
   - TransparentFX
