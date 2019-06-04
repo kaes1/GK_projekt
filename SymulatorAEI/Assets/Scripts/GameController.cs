@@ -183,6 +183,12 @@ public class GameController : MonoBehaviour
                     HideDetails();
                 }
                 break;
+
+            case "InteractableButton":
+                InteractableButton script = selectedForInteraction.GetComponent<InteractableButton>();
+                if (script)
+                    script.Interact();
+                break;
             default:
                 break;
         }

@@ -33,7 +33,7 @@ public class CustomRaycasting
             Vector3 intersectionPoint = origin + t * direction.normalized;
 
             float planeWidth = planeObject.transform.lossyScale.x * 10f / 2f;
-            float planeHeight = planeObject.transform.lossyScale.z * 10f / 2f;
+            //float planeHeight = planeObject.transform.lossyScale.z * 10f / 2f;
 
             if (Vector3.Distance(intersectionPoint, planeObject.transform.position) < planeWidth)
             {
