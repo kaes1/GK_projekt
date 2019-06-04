@@ -29,7 +29,7 @@ public class ElevatorController : MonoBehaviour
     public int targetFloor;
 
     private bool moving = false;
-
+    private bool carryingPlayer = false;
 
 
     private GameObject Player;
@@ -73,6 +73,7 @@ public class ElevatorController : MonoBehaviour
             OpenDoorsOnFloor(targetFloor);
             moving = false;
             Player.GetComponent<CharacterController>().enabled = true;
+            carryingPlayer = false;
         }
             
 
@@ -89,10 +90,14 @@ public class ElevatorController : MonoBehaviour
 
         Elevator.transform.localPosition = new Vector3(Elevator.transform.localPosition.x, newPosition, Elevator.transform.localPosition.z);
 
-        float newPositionGlobal = Elevator.transform.position.y;
+        if (carryingPlayer)
+        {
+            float newPositionGlobal = Elevator.transform.position.y;
 
-        float movementGlobal = newPositionGlobal - currentPositionGlobal;
-        Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + movementGlobal, Player.transform.position.z);
+            float movementGlobal = newPositionGlobal - currentPositionGlobal;
+            Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + movementGlobal, Player.transform.position.z);
+
+        }
 
     }
 
@@ -104,6 +109,7 @@ public class ElevatorController : MonoBehaviour
         if (ElevatorInside.bounds.Contains(Player.transform.position))
         {
             Player.GetComponent<CharacterController>().enabled = false;
+            carryingPlayer = true;
         }
 
         moving = true;
