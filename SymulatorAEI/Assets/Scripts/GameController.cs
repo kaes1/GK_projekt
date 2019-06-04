@@ -88,14 +88,13 @@ public class GameController : MonoBehaviour
 
     public void ClearInteractable()
     {
+        HideInteractionPrompt();
+        HideDetails();
         //If previously selected something, disable previous highlighting and hide interaction prompt and details.
         if (selectedForInteraction != null)
         {
-            Highlight highlight = selectedForInteraction.GetComponent<Highlight>();
-            if (highlight != null)
-                highlight.HighlightEnd();
-            HideInteractionPrompt();
-            HideDetails();
+            if (selectedForInteraction.GetComponent<Highlight>() != null)
+                selectedForInteraction.GetComponent<Highlight>().HighlightEnd();
             selectedForInteraction = null;
         }
     }
@@ -110,87 +109,44 @@ public class GameController : MonoBehaviour
         //If object is interactable highlight it, show interaction prompt and remember selected object.
         if (gameObject != null && gameObject.tag.Contains("Interactable"))
         {
-            Highlight highlight = gameObject.GetComponent<Highlight>();
-            if (highlight != null)
-                highlight.HighlightStart();
+            if (gameObject.GetComponent<Highlight>() != null)
+                gameObject.GetComponent<Highlight>().HighlightStart();
             DisplayInteractionPrompt(gameObject);
             selectedForInteraction = gameObject;
         }
-        else
-            selectedForInteraction = null;
     }
 
-    public void DisplayInteractionPrompt(GameObject gameObject)
+    private void DisplayInteractionPrompt(GameObject gameObject)
     {
         if (gameObject != null)
-            switch (gameObject.tag)
-            {
-                case "InteractablePlaque":
-                    InteractionPromptText.text = "Press E to Read";
-                    break;
-                default:
-                    InteractionPromptText.text = "Press E to Interact";
-                    break;
-            }
+            if (gameObject.GetComponent<Interactable>() != null)
+                InteractionPromptText.text = gameObject.GetComponent<Interactable>().GetInteractPromptText();
         InteractionPromptUI.SetActive(true);
     }
 
-    public void HideInteractionPrompt()
+    private void HideInteractionPrompt()
     {
         InteractionPromptUI.SetActive(false);
     }
 
-    public void DisplayDetails(GameObject gameObject)
+    public void DisplayDetails(string mainText, string secondaryText)
     {
-        //Display different details based on object.
-        switch (gameObject.tag)
-        {
-            case "InteractablePlaque":
-                RoomInformation roomInfo = gameObject.GetComponent<RoomInformation>();
-                DetailsMainText.text = roomInfo.plaqueText;
-                DetailsSecondaryText.text = "'E' to close";
-                break;
-            default:
-                DetailsMainText.text = "Main";
-                DetailsSecondaryText.text = "'E' to close";
-                break;
-        }
+        DetailsMainText.text = mainText;
+        DetailsSecondaryText.text = secondaryText;
+
+        HideInteractionPrompt();
         DetailsUI.SetActive(true);
     }
 
-    public void HideDetails()
+    private void HideDetails()
     {
         DetailsUI.SetActive(false);
     }
 
     public void InteractWithSelected()
     {
-        //Return if there's nothing to interact with.
-        if (selectedForInteraction == null || !selectedForInteraction.tag.Contains("Interactable"))
-            return;
-
-        //Do different interaction based on object.
-        switch (selectedForInteraction.tag)
-        {
-            case "InteractablePlaque":
-                if (!DetailsUI.activeSelf)
-                {
-                    HideInteractionPrompt();
-                    DisplayDetails(selectedForInteraction);
-                }
-                else
-                {
-                    HideDetails();
-                }
-                break;
-
-            case "InteractableButton":
-                InteractableButton script = selectedForInteraction.GetComponent<InteractableButton>();
-                if (script)
-                    script.Interact();
-                break;
-            default:
-                break;
-        }
+        if (selectedForInteraction != null)
+            if (selectedForInteraction.GetComponent<Interactable>() != null)
+                selectedForInteraction.GetComponent<Interactable>().Interact();
     }
 }

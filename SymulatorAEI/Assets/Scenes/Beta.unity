@@ -1003,13 +1003,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 440550796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b961569df1cae074fb978ed80d319aa8, type: 3}
+  m_Script: {fileID: 11500000, guid: f64fee47833b31643bfcf41fdaacb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomID: 406
-  plaqueText: 'Room 406
+  roomInformation:
+    roomID: 406
+    plaqueText: 'Room 406
 
-    Bartosz Bartoszewski'
+      Bartosz Brateczny'
 --- !u!114 &440550799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,7 @@ BoxCollider:
   m_GameObject: {fileID: 440550796}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1327,13 +1328,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 576374685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b961569df1cae074fb978ed80d319aa8, type: 3}
+  m_Script: {fileID: 11500000, guid: f64fee47833b31643bfcf41fdaacb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomID: 407
-  plaqueText: 'Room 407
+  roomInformation:
+    roomID: 407
+    plaqueText: 'Room 407
 
-    Chester Czeski'
+      Chester Czeski'
 --- !u!114 &576374688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4492,13 +4494,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077035362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b961569df1cae074fb978ed80d319aa8, type: 3}
+  m_Script: {fileID: 11500000, guid: f64fee47833b31643bfcf41fdaacb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomID: 405
-  plaqueText: 'Room 405
+  roomInformation:
+    roomID: 405
+    plaqueText: 'Room 405
 
-    Andrzej Andrzejewski'
+      Andrzej Andrzejewski'
 --- !u!114 &2077035365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,15 +4788,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 265599822722375708, guid: 69630d91f557f32468dac1755b6195a5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6324884211610504302, guid: 69630d91f557f32468dac1755b6195a5,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 265599822722375708, guid: 69630d91f557f32468dac1755b6195a5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6324884211610504272, guid: 69630d91f557f32468dac1755b6195a5,
         type: 3}

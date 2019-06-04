@@ -3,26 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractableButton : MonoBehaviour
+public class InteractableButton : MonoBehaviour, Interactable
 {
-
     public UnityEngine.Events.UnityEvent OnInteract;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Interact()
     {
         Debug.Log("Interact() in button called!");
         OnInteract.Invoke();
+    }
+
+    public string GetInteractPromptText()
+    {
+        return "Press E to Interact";
     }
 }
