@@ -25,9 +25,14 @@ public class NPCController : MonoBehaviour
     private float minRotationSpeed = 22.2f;
 
 
+
+    private Animator Animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        Animator = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
         DefaultRotation = this.transform.rotation;
     }
@@ -44,6 +49,10 @@ public class NPCController : MonoBehaviour
         else
         {
             TurnToDefaultPosition();
+            if (Animator)
+            {
+                Animator.Play("Stand", 0);
+            }
         }
             
     }
@@ -94,7 +103,10 @@ public class NPCController : MonoBehaviour
 
     void WaveToPlayer()
     {
-        //NOTHING YET
+        if (Animator)
+        {
+            Animator.Play("Wave", 0);
+        }
     }
 
 
