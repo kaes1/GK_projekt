@@ -14,12 +14,12 @@ public class Reflection : MonoBehaviour
 
     [Header("Wyłącz i włącz skrypt żeby nadpisać zmiany z suwaków/kolorów")]
     [Range(0.01f,1)]
-    public float inten1;//intensywnosc 1
+    public float inten1 = 0.5f;//intensywnosc 1
     [Range(0.01f, 1)]
-    public float inten2;//intensywnosc 2
+    public float inten2 = 0.5f;//intensywnosc 2
 
-    public Color col1;
-    public Color col2;
+    public Color col1 = Color.white;
+    public Color col2 = Color.white;
 
     void Start()
     {
@@ -27,12 +27,12 @@ public class Reflection : MonoBehaviour
         UpdateCubemap(63);
     }
 
-    void OnDisable()
-    {
-        DestroyImmediate(cam);
-        DestroyImmediate(renderTexture);
-        DestroyImmediate(_MaterialShader);
-    }
+    //void OnDisable()
+    //{
+    //    DestroyImmediate(cam);
+    //    DestroyImmediate(renderTexture);
+    //    DestroyImmediate(_MaterialShader);
+    //}
 
     void LateUpdate()
     {
