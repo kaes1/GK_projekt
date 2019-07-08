@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     //Jumping
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMultiplier;
+    [SerializeField] private AudioSource stepSound;
     private bool isJumping;
     
 
@@ -38,6 +39,13 @@ public class PlayerMove : MonoBehaviour
         Vector3 rightMovement = transform.right * horizInput;
         
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
+
+        //Play walking sound
+        if((forwardMovement.sqrMagnitude != 0 || rightMovement.sqrMagnitude != 0) && !isJumping)
+        {
+            if (!stepSound.isPlaying)
+                stepSound.Play();
+        }
 
         //When walking down slopes apply force downwards.
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
