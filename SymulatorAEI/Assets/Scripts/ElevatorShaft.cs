@@ -23,7 +23,9 @@ public class ElevatorShaft : MonoBehaviour
     //GameObject of the player, for checking if player is inside.
     private GameObject Player;
 
-
+    //Elevator AudioPlayer
+    [SerializeField] private AudioSource elevatorArrived;
+    [SerializeField] private AudioSource elevatorMoves;
 
     //The floor elevator is currently moving to.
     private int targetFloor = 0;
@@ -78,6 +80,10 @@ public class ElevatorShaft : MonoBehaviour
                     Player.GetComponent<CharacterController>().enabled = true;
                     carryingPlayer = false;
                 }
+                if(!elevatorMoves.isPlaying)
+                {
+                    elevatorMoves.Play();
+                }
                 break;
 
             case ElevatorState.DoorsOpening:
@@ -89,6 +95,8 @@ public class ElevatorShaft : MonoBehaviour
                 {
                     CurrentElevatorState = ElevatorState.DoorsOpen;
                     doorsOpenTimeLeft = 2.5f;
+                    elevatorMoves.Stop();
+                    elevatorArrived.Play();
                 }
                 break;
 
