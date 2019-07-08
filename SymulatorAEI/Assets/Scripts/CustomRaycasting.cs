@@ -13,7 +13,7 @@ public class CustomRaycasting
 
         foreach (GameObject planeObject in allPlanes)
         {
-            //Debug.DrawRay(planeObject.transform.position, planeObject.transform.up * maxDistance, Color.red);
+            //Debug.DrawRay(planeObject.transform.position, planeObject.transform.up.normalized * maxDistance, Color.red);
             //Mathematical plane.
             Plane plane = new Plane(planeObject.transform.up.normalized, planeObject.transform.position);
 
@@ -27,19 +27,33 @@ public class CustomRaycasting
 
             float t = numerator / denominator;
 
-            if (t > maxDistance || t > closestDistance)
+            if (t < 0.000001f || t > maxDistance || t > closestDistance)
                 continue;
 
             Vector3 intersectionPoint = origin + t * direction.normalized;
 
-            float planeWidth = planeObject.transform.lossyScale.x * 10f / 2f;
-            //float planeHeight = planeObject.transform.lossyScale.z * 10f / 2f;
+            
 
-            if (Vector3.Distance(intersectionPoint, planeObject.transform.position) < planeWidth)
+
+            float planeHalfSize = planeObject.transform.lossyScale.x * 10.0f / 2.0f;
+
+            if (Vector3.Distance(intersectionPoint, planeObject.transform.position) < planeHalfSize)
             {
                 closestDistance = t;
                 closestObject = planeObject.transform.parent.gameObject;
+
+                Debug.DrawLine(intersectionPoint + 0.3f * Vector3.right, intersectionPoint + 0.3f * Vector3.left);
+                Debug.DrawLine(intersectionPoint + 0.3f * Vector3.up, intersectionPoint + 0.3f * Vector3.down);
+                Debug.DrawLine(intersectionPoint + 0.3f * Vector3.forward, intersectionPoint + 0.3f * Vector3.back);
             }
+
+            //Dla rotacji = 0 0 0
+            //if (Mathf.Abs(planeObject.transform.position.x - intersectionPoint.x) > planeHalfSize
+            //    || Mathf.Abs(planeObject.transform.position.z - intersectionPoint.z) > planeHalfSize)
+            //{
+                //no collision
+            //}
+
         }
 
         return closestObject;

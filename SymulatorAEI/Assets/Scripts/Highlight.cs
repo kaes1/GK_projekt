@@ -29,13 +29,11 @@ public class Highlight : MonoBehaviour
 
     public void HighlightStart()
     {
-        //Debug.Log(this.name + " highlight START!");
         this.GetComponent<Renderer>().material.color = highlightColor;
     }
 
     public void HighlightEnd()
     {
-        //Debug.Log(this.name + " highlight END!");
         this.GetComponent<Renderer>().material.color = originalColor;
     }
 

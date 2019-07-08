@@ -25,7 +25,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();
+        if (charController.enabled == true)
+            PlayerMovement();
     }
 
     private void PlayerMovement()
@@ -35,6 +36,7 @@ public class PlayerMove : MonoBehaviour
         float horizInput = Input.GetAxis("Horizontal"); //No need to multiply * Time.deltaTime because SimpleMove does that automatically.
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
+        
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
         //When walking down slopes apply force downwards.
