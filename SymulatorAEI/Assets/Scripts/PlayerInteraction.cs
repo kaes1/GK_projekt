@@ -28,8 +28,6 @@ public class PlayerInteraction : MonoBehaviour
         //Use Raycasting to get object hit.
         GameObject objectHit = null;
         objectHit = CustomRaycasting.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, distanceToSee);
-        //if (Physics.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, out RaycastHit raycastHitInfo, distanceToSee))
-        //    objectHit = raycastHitInfo.collider.gameObject;
         //Debug.Log("Player is looking at: " + objectHit);
         //If looking at something new, tell game controller what is currently selected.
         if (objectHit != lookedAtObject)

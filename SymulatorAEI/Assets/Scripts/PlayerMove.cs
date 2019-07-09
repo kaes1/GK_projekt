@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
         //Play walking sound
-        if((forwardMovement.sqrMagnitude != 0 || rightMovement.sqrMagnitude != 0) && !isJumping)
+        if((forwardMovement.sqrMagnitude != 0 || rightMovement.sqrMagnitude != 0) && !isJumping && Time.deltaTime > 0)
         {
             if (!stepSound.isPlaying)
                 stepSound.Play();

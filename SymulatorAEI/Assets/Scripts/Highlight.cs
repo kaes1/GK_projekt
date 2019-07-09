@@ -7,34 +7,39 @@ public class Highlight : MonoBehaviour
 
     private Color originalColor;
     private Color highlightColor;
+    private bool highlightThis = false;
+
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        originalColor = this.GetComponent<Renderer>().material.color;
-
-        if (this.tag == "InteractablePlaque")
+        if(GetComponent<Renderer>() != null)
         {
-            //highlightColor = new Color(originalColor.r * 2.7f, originalColor.g, originalColor.b);
-            highlightColor = new Color(200f, 0f, 50f);
+            highlightThis = true;
+            originalColor = this.GetComponent<Renderer>().material.color;
+            highlightColor = new Color(originalColor.r * 1.6f, originalColor.g * 1.6f, originalColor.b * 1.6f);
         }
-        else
-        {
-            highlightColor = new Color(originalColor.r * 1.8f, originalColor.g * 1.8f, originalColor.b * 1.8f);
-        }
-        
     }
-
-    void Update() { }
 
     public void HighlightStart()
     {
-        this.GetComponent<Renderer>().material.color = highlightColor;
+        if (highlightThis)
+            GetComponent<Renderer>().material.color = highlightColor;
+
+        for(int i = 0; i < transform.childCount; i++)
+            if (transform.GetChild(i).GetComponent<Highlight>())
+                transform.GetChild(i).GetComponent<Highlight>().HighlightStart();
     }
 
     public void HighlightEnd()
     {
-        this.GetComponent<Renderer>().material.color = originalColor;
+        if (highlightThis)
+            GetComponent<Renderer>().material.color = originalColor;
+
+        for (int i = 0; i < transform.childCount; i++)
+            if (transform.GetChild(i).GetComponent<Highlight>())
+                transform.GetChild(i).GetComponent<Highlight>().HighlightEnd();
     }
 
 }

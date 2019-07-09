@@ -7,9 +7,10 @@ public class PlayerLook : MonoBehaviour
     //Player's camera.
     [SerializeField] private Camera PlayerCamera;
 
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private float mouseSensitivity = 150.0f;
 
     private float xAxisClamp;
+    private float mouseX, mouseY;
 
     private void Awake()
     {
@@ -25,8 +26,8 @@ public class PlayerLook : MonoBehaviour
 
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; 
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime; 
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; 
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime; 
 
         xAxisClamp += mouseY;
 
@@ -44,15 +45,15 @@ public class PlayerLook : MonoBehaviour
         }
 
         //For up-down rotate the camera.
-        PlayerCamera.transform.Rotate(-Vector3.right * mouseY);
+        PlayerCamera.transform.Rotate(Vector3.left * mouseY);
         //For left-right rotate the body.
         this.transform.Rotate(Vector3.up * mouseX);
     }
 
     private void ClampXAxisRotationToValue(float value)
     {
-        Vector3 eulerRotation = transform.eulerAngles;
+        Vector3 eulerRotation = PlayerCamera.transform.eulerAngles;
         eulerRotation.x = value;
-        transform.eulerAngles = eulerRotation;
+        PlayerCamera.transform.eulerAngles = eulerRotation;
     }
 }

@@ -24,15 +24,15 @@ public class ElevatorShaft : MonoBehaviour
     private GameObject Player;
 
     //Elevator AudioPlayer
-    [SerializeField] private AudioSource elevatorArrived;
-    [SerializeField] private AudioSource elevatorMoves;
+    private AudioSource elevatorArrivedAudioSource;
+    private AudioSource elevatorMovesAudioSource;
 
     //The floor elevator is currently moving to.
     private int targetFloor = 0;
     //The floor elevator will move to when finished with current movement.
     private int nextTargetFloor = -1;
     //The floor elevator is currently as. Float instead of integer to show position between floors.
-    public float currentFloor = 0;
+    private float currentFloor = 0;
     //Text UI where current floor will be displayed.
     private TMPro.TextMeshProUGUI[] currentFloorDisplayTexts = new TMPro.TextMeshProUGUI[10];
     //Time left before doors close.
@@ -43,7 +43,7 @@ public class ElevatorShaft : MonoBehaviour
     private float distanceBetweenFloors;
     private bool carryingPlayer = false;
     //Speed of movement of the elevator.
-    public float speed = 1.5f;
+    public float speed = 1.6f;
 
     private void Awake()
     {
@@ -57,11 +57,27 @@ public class ElevatorShaft : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
             currentFloorDisplayTexts[i] = transform.Find("Floor" + i).Find("ElevatorFloorDisplay").Find("Canvas").Find("TextMeshPro Text").GetComponent<TMPro.TextMeshProUGUI>();
-        
+
+        var audioSources = Elevator.GetComponents<AudioSource>();
+        elevatorArrivedAudioSource = audioSources[0];
+        elevatorMovesAudioSource = audioSources[1];
     }
 
     void Update()
     {
+        //Pause audio when time is frozen and don't do anything.
+        if (Time.deltaTime == 0)
+        {
+            elevatorMovesAudioSource.Pause();
+            elevatorArrivedAudioSource.Pause();
+            return;
+        }
+        else
+        {
+            elevatorMovesAudioSource.UnPause();
+            elevatorArrivedAudioSource.UnPause();
+        }
+
         //Calculate current floor.
         currentFloor = (Elevator.transform.localPosition.y - originalElevatorPosition) / distanceBetweenFloors;
         //Display current floor on all floor displays.
@@ -79,10 +95,12 @@ public class ElevatorShaft : MonoBehaviour
                     CurrentElevatorState = ElevatorState.DoorsOpening;
                     Player.GetComponent<CharacterController>().enabled = true;
                     carryingPlayer = false;
+                    elevatorMovesAudioSource.Stop();
+                    elevatorArrivedAudioSource.Play();
                 }
-                if(!elevatorMoves.isPlaying)
+                if(!elevatorMovesAudioSource.isPlaying)
                 {
-                    elevatorMoves.Play();
+                    elevatorMovesAudioSource.Play();
                 }
                 break;
 
@@ -94,9 +112,7 @@ public class ElevatorShaft : MonoBehaviour
                 if (openDoorsAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Open"))
                 {
                     CurrentElevatorState = ElevatorState.DoorsOpen;
-                    doorsOpenTimeLeft = 2.5f;
-                    elevatorMoves.Stop();
-                    elevatorArrived.Play();
+                    doorsOpenTimeLeft = 2.5f; 
                 }
                 break;
 
@@ -126,7 +142,10 @@ public class ElevatorShaft : MonoBehaviour
                 targetFloor = nextTargetFloor;
                 nextTargetFloor = -1;
                 if (targetFloor == Mathf.RoundToInt(currentFloor))
+                {
                     CurrentElevatorState = ElevatorState.DoorsOpening;
+                    elevatorArrivedAudioSource.Play();
+                }
                 else
                 {
                     CurrentElevatorState = ElevatorState.Moving;
