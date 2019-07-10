@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InteractablePlaque : MonoBehaviour, Interactable
 {
-    public RoomInformation roomInformation;
+    public string roomID;
+
     private GameController GameController;
+
     public void Awake()
     {
         GameController = FindObjectOfType<GameController>();
@@ -13,7 +15,7 @@ public class InteractablePlaque : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        GameController.DisplayDetails(roomInformation.plaqueText, "");
+        GameController.DisplayDetailsForRoom(roomID);
     }
 
     public string GetInteractPromptText()

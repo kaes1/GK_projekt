@@ -1,0 +1,972 @@
+﻿!komentarz oznaczany przez wykrzyknik, to nie jest parsowane.
+#528
+Laboratorium ZO-4
+#527
+Laboratorium ZO-3
+#526
+Laboratorium ZO-2
+#525
+Dr inż. Agnieszka Danek
+Dr inż. Adam Gudyś
+#524
+Laboratorium ZO-1
+#523
+Dr inż. Karolina Nurzyńska
+Dr hab. inż. Krzysztof Simiński
+Dr inż. Jacek Szedel
+#A
+Aula A zielona
+#B
+Aula B pomarańczowa
+#C
+Aula C niebieska
+#D
+Aula D
+#E
+Aula E
+#126
+Pełnomocnik kwestora
+Mgr inż. Małgorzata Gielarowska-Kosior
+#125
+Biuro dziekana
+Lic. Nina Ryś-Protas
+#124
+Laboratorium aktywnej redukcji hałasu
+#123
+Laboratorium przetrwarzania sygnałów
+#122 
+Laboratorium sterowników programowalnych
+#121
+Laboratorium komputerowych systemów sterowania
+#120
+Dr inż. Ryszard Jakuszewski
+#119
+Zespół Teorii Przestrzeni. Danych i Algorytmów 
+Prof. dr hab. inż. Marcin Gorawski
+Dr inż. Rafał Malczok
+Mgr inż. Anna Gorawska
+Mgr inż. Krzysztof Pasterak
+#118
+Archiwum
+#117
+Koło naukowe SKN Fusion
+#116
+Laboratorium pomiarów radiometrycznych
+#115
+Dr inż. Alicja Wiora
+#114
+Dr inż. Piotr Krauze
+#113
+Dr inż. Józef Wiora
+#112
+Dr inż. Tomasz Grychowski
+#111
+Dr inż. Dariusz Buchczik
+Dr inż. Witold Ilewicz
+#110
+#109
+Dr inż. Sebastian Budzan
+#108
+Dr inż. Roman Wyżgolik
+#107
+Dr inż. Stanisław Wrona
+#106
+Mgr inż. Oliwia Krauze
+Mgr inż. Karol Jabłoński
+#105
+Dr inż. Andrzej Kozyra
+#104
+Laboratorium
+#103
+Laboratorium czujników ciśnienia i gazów oraz BMS
+#132
+Dyrektor administracyjny
+Mgr inż. Jarosław Homa
+#133
+Mgr Bernadeta Bonio
+Kierownik Dziekanatu
+#14
+Dział IT
+#13
+Administracja
+Mgr inż. Michał Henryk Stypolkowski
+#12
+Administracja
+Janina Brzyska
+#9
+Dziekanat
+mgr Ewelina Widerak
+#8
+Dziekanat
+kierunek: Elektronika i Teleinformatyka
+Lic. Ewa Charczyszyn
+#7
+#4
+Sala do ćwiczeń
+#19
+Biuro dziekana
+#20
+Dziekanat
+Ewa Lamia
+- Informatyka S1
+- Stupendium rektora dla najlepszych studentów
+#21
+Dziekanat
+Mgr Maria Skotnicka
+- Studia niestacjonarne
+- Akademiki
+#22
+Dziekanat
+Alicja Nierychlewska
+- Automatyka i Robotyka S1 i S2
+- Biotechnologia S1 i S2
+#23 
+Dziekanat
+Mgr Ewelina Kaczmarczyk
+- Informatics S1
+- Informatyka S2
+- ERASMUS
+- Stypendia dla doktorantów
+#24
+Dziekanat
+Izabela Kulczyna
+- Makrokierunek S1 i S2
+- ERASMUS
+- Studia doktoranckie
+#18
+#DE
+Laboratorium
+#224
+Biblioteka
+Mgr Anna Obrzut
+#223
+Laboratorium komputerowe sterowników przemysłowych
+#222
+Dr inż. Janusz Wyrwał
+#221
+Dr inż. Chukwuemeke William Isaac
+#220
+Dr inż. Jacek Loska
+#219
+Piotr Kotowicz
+#218
+Laboratorium systemów wizyjnych
+#217
+Laboratorium miernictwa przemysłowego
+#216
+Dr inż. Małgorzata Michalczyk
+#215
+Prof. dr hab. inż. Konrad Wojciechowski
+#214
+#213
+Laboratorium diagnostyki wibracyjnej maszyn
+#212
+Laboratorium pomiarów drgań
+#211a
+Warsztat
+#211
+Laboratorium systemów interfejsów pomiarowych niezawodności i iskobezpieczeństwa
+#210
+Laboratorium oprogramowania systemów pomiarowych
+#209
+Laboratorium
+#208a
+#208
+Laboratorium podstaw miernictwa
+#207
+Mgr inż. Anna Chrapońska
+Mgr inż. Jarosław Rzepecki
+#206
+Mgr inż. Szymon Ogonowski
+#205
+Prof. dr hab. inż. Jerzy Klamka
+#204
+Dr inż. Krzysztof Mazur
+#203
+Dr inż. Jerzy Hajda
+#226
+Mgr Anna Obrzut
+#227
+Sala konferencyjna
+#228
+Dr inż. Piotr Skupin
+#229
+Dr inż. Krzysztof Stebel
+#230
+Dr inż. Piotr Łaszczyk
+#231
+Dr hab. inż. Dariusz Choiński
+#232
+Dr hab. inż. Witold Nocoń
+#233
+Mgr inż. Hendryk Jakubiec
+#234
+Laboratorium nanotechnologii
+#235
+Dr inż. Michał Frątczak
+Dr inż. Paweł Nowak
+Mgr inż. Patryk Grelewicz
+#236
+Komuputerowe laboratorium modelowania i symulacji
+#236a
+#237
+Dr inż. Tomasz Kłopot
+#238
+Prof. dr hab. inż. Mieczysław Metzger
+#239
+Laboratorium Rockwell Automation
+#240
+Laboratorium procesó nutralizacji
+#241
+Klaudiusz Szołtys
+#242
+Pomieszenie techniczne
+#F
+Aula F
+#329
+Laboratorium sterowania procesami energetycznymi
+Dr inż. Jerzy Mościński
+Dr inż. Zbigniew Ogonowski 
+#328
+Sala do ćwiczeń
+#327a
+#327
+Laboratorium komputerowe
+#326
+Mgr inż. Łukasz Rataj
+#325
+Laboratorium komputerowe
+#324
+Prof. dr hab. inż. Jarosław Figwer
+#323a
+#323
+Dr hab. inż. prof. Pol. Śl. Krzysztof Cyran
+#322
+Dr inż. Bożena Małysiak-Mrozek
+Dr inż. Aleksandra Werner
+Dr inż. Alina Momot
+#321
+Laboratorium komputerowe
+#320a
+#320
+Laboratorium komputerowe
+#319
+!319-318
+Dr inż. Oleg Anterjczuk
+Dr inż. Jarosław Paduch
+Mgr Jarosław Nosiałek
+#317
+!317-316
+Dr inż. Grzegorz Baron
+Dr inż. Piotr Czekalski
+Dr inż. Gabriel Drabik
+Mgr inż. Godlove Sulan Kuaban
+#315
+Dr inż. Urszula Stańczyk
+#314
+Instytut Informatyki
+Dr inż. Ewa Starzewska-Karwan
+Mgr inż. Krzysztof Kotowski
+#313
+Prof. dr hab. inż. Krystyna Stąpor
+#312
+Dr inż. Katarzyna Harężlak
+Dr inż. Małgorzata Bach
+#311
+Dr inż. Krzysztof Tokarz
+#310
+Biuro projektu
+#309
+Dr inż. Henryk Małysiak
+#308
+Prof. dr hab. inż. Bolesław Pochopień
+#307
+Dr hab. inż. prof. Pol. Śl. Jerzy Kasprzyk
+#306
+Dr hab. inż. prof. Pol. Śl. Dariusz Bismor
+#305
+Prof. dr hab. inż. Marek Pawełczyk
+#304
+Mgr Marta Czernecka
+#331
+Laboratorium biotechnologiczne
+#331a
+Laboratorium biotechnologiczne
+#332
+Laboratorium FISH
+#333
+Dr inż. Joanna Żyła
+Dr inż. Franciszek Binczyk
+Mgr inż. Anna Papież
+#334
+Laboratorium informatyki przemysłowej
+#335
+Dr inż. Adam Opara
+#336
+Laboratorium komputerowe
+#337
+Dr hab. inż. Bartłomiej Zieliński
+#338
+Laboratorium komputerowe układów sterowania
+Sala seminaryjna
+#338a
+Laboratorium układów sterowania
+Instalacja technologiczne
+#339
+Prof. dr hab. inż. Andrzej Polański
+#340
+Laboratorium układów sterowania
+Instalacja technologiczne
+#340a
+#341
+Dr hab. inż. Jacek Czeczot
+#342
+Dr inż. Damian Pęszor
+Dr inż. Przemysław Skurowski
+#330
+Labaratorium Wirtualnego Latania
+#427
+Labaratorium komputerowe
+#426
+Laboratorium informatyki przemysłowej
+#425
+Sala do ćwiczeń
+#424
+Sala do ćwiczeń
+#423a
+#423
+Sala do ćwiczeń
+#422
+Laboratorium 421
+#421
+Laboratorium 421
+#420
+Laboratorium 420
+#419
+Prof. dr hab. inż. Stanisław Kozielski
+#418
+Dr inż. Dariusz Rafał Augustyn
+Dr inż. Łukasz Wyciślik
+#416b
+Laboratorium komputerowe
+#416a
+Laboratorium komputerowe
+#415
+Dr inż. Błażej Adamczyk
+Dr inż. Dominik Samociuk
+Dr inż. Łukasz Wróbel
+#414
+Dr inż. Aleksandra Gruca
+Dr inż. Agnieszka Piotrowska
+Mgr inż. Patryk Jarnot
+#413
+Mgr inż. Krzysztof Głuch
+Mgr inż. Eliasaph Migigo
+Mgr inż. Monika Nycz
+Mgr inż. Marek Barczyk
+Mgr inż. Adam Glos
+Mgr inż. Paweł Matyszok
+#412
+Prof. dr hab. inż. Andrzej Chydziński
+#411
+Dr hab. Marek Sikora
+Dr inż. Michał Kozielski
+Dr inż. Marcin Michalak
+#410
+Dr inż. Arkadiusz Biernacki
+Dr inż. Robert Wójcicki
+Dr inż. Adam Jóżefiok
+#409
+Prof. dr hab. inż. Tadeusz Czachórski
+#408
+Sekretariat
+Mgr Dorota Huget
+#407
+Laboratorium 407
+#406
+#405
+Dr inż. Marcin Skowronek
+#404
+Dr hab. inż. Dariusz Mrozek - kierownik Zakładu Teorii Informatyki
+Dr inż. Robert Brzeski
+Dr inż. Daniel Kostrzewa
+Mgr inż. Paweł Benecki
+Mgr inż. Mateusz Golosz
+#403
+Mgr inż. Jacek Pietraszuk
+#429
+Laboratorium robotów stacjonarnych
+#429a
+Laboratorium robotów stacjonarnych
+#430
+Prof. dr hab. inż. Andrzej Świerniak'
+#431
+Mgr inż. Aleksandra Szczerbik
+#432
+Dr hab. inż. Krzysztof Fujarewicz
+#433
+Prof. dr hab. inż. Marek Kimmel
+Prof. dr hab. inż. Joanna Rzeszowska 
+#434
+Dr inż. Marta Iwanaszko
+Dr inż. Roman Jaksik
+Dr inż. Anna Lalik
+Dr inż. Magdalena Skonieczna
+Dr inż. Sebatian Student
+#435
+Dr inż. Mieczysław Jagodziński
+#436
+Laboratorium robotics
+#436a
+Dr inż. Tomasz Grzejszczak
+Mgr Eryka Probierz
+#437
+Mgr Katarzyna Fabiś
+#438
+Laboratorium elektromechanicznych elementów automatyki
+#438a
+Dr hab. inż. Jarosław Śmieja
+#439
+Dr inż. Aleksander Staszulonek
+Dr inż. Radosław Zawiski
+Mgr inż. Grzegorz Szafrański
+#440
+Dr hab inż. Tadeusz Szkodny
+#428
+Laboratorium komputerowe
+#522
+Mgr inż. Paweł Sadowski
+Mgr inż. Grzegorz Kwiatkowski
+Mgr inż. Tomasz Jastrząb
+#521
+Dr hab inż. Roman Starosolski
+Dr inż. Piotr Fabian
+#520
+Prof. dr hab. inż. Zbigniew Czech
+#519
+Dr inż. Przemysław Szmal
+#518
+Dr hab. inż. Jerzy Respondek
+Dr inż. Ewa Płuciennik
+Dr inż. Adam Duszenko
+Dr inż. Jacek Frączek
+Dr inż. Paweł Kasprowski
+Dr inż. Robert Tutajewicz
+#517
+Prof. dr hab. inż. Andrzej Polański
+#516
+Mgr Magdalena Szczechura
+#515
+Mgr inż. Katarzyna Chałubiec
+#514
+Pokój socjalny
+#513
+Dr Ewa Lach
+Dr inż. Michał Staniszewski
+Mgr inż. Magdalena Pawlyta
+#512a
+#512
+Mgr inż. Danuta Stech
+#511
+Prof. dr hab. inż. Andrzej Kwiecień
+#510
+Małgorzata Gładysz
+#509
+Dr inż. Agnieszka Debudaj-Grabysz
+Dr inż. Jacek Lach
+Dr inż. Jacek Widuch
+#508
+Kierownik zakładu
+Z-ca dyrektora Instytutu Informatyki d/s nauki
+Prof. dr hab. inż. Sebastian Deorowicz
+#507
+Dr inż. Krzysztof Dobosz
+Dr inż. Michał Kolano
+#506
+Mgr inż. Piotr Sroczyński
+Mgr inż. Tomasz Drosik
+Mgr inż. Łukasz Lipka 
+Mgr inż. Maksym Walczak
+Mgr inż. Wojciech Dudzik
+Mgr inż. Pablo Ribalta Lorenzo
+#505a
+Pokój socjalny
+#505
+Sekretariat
+Aleksandra Skórczyńska
+Helena Ślusarczyk
+#504
+Dr hab. inż. Michał Kawulok
+Dr inż. Jakub Nalepa
+#503
+Dr inż. Dariusz Myszor
+Dr inż. Jolanta Kawulok
+Mgr inż. Adam Dyrek
+#531
+Sala seminaryjna
+#532
+Prof. dr hab. inż. Andrzej Świerniak
+#533
+Sekretariat Instytutu
+Mgr Elżbieta Gajda
+#534
+Mgr Mariola Czerwińska
+#535
+Dr inż. Michał Marczyk
+Mgr inż. Łukasz Król
+Mgr inż. Joanna Tobiasz
+#536
+#537
+Dr inż. Hafet Zghidi
+#538
+Dr inż. Adam Popowicz
+Dr inż. Marek Szczepański
+#539
+Mgr inż. Marek Kokot
+Mgr inż. Maciej Długosz
+Mgr inż. Krzysztof Pawełczyk
+#540
+Dr inż. Damian Kuśnik
+Mgr inż. Ireneusz Smołka
+#541
+Dr hab. inż. Rafał Cupek
+Mgr inż. Damian Karbowiak
+#542
+Dr hab. inż. Piotr Gaj
+Dr inż. Jacek Stój
+#543
+Laboratorium informatyki przemysłowej
+#544
+#545
+Sala do ćwiczeń
+#546
+Sala do ćwiczeń
+#547
+Dr Bożena Paluchiewicz
+Dr inż. Jolanta Krystek
+#530a
+#530
+Sala do ćwiczeń
+#529a
+#529
+Sala do ćwiczeń
+#623
+Laboratorium komputerowe
+#622a
+Instytut Matematyki
+#622
+Sala do ćwiczeń
+#621a
+Sala do ćwiczeń
+#621
+Dr inż. Agnieszka Szczęsna
+#620
+Mgr inż. Szymon Para
+#619a
+#619
+#618a
+#618
+Laboratorium układów analogowych
+#617
+Mgr inż. Dariusz Kolka
+#616
+Laboratorium podstaw elektrotechniki
+#615
+Laboratorium sterowników programowalnych
+#613
+Laboratorium techniki cyfrowej
+#612
+Lic. Piotr Zając
+#611
+Dr hab. inż. Robert Czerwiński Prof. Pol. Śl.
+#610
+Dr inż. Józef Kulisz
+Dr inż. Maciej Nowiński
+Mgr inż. Jan Mocha
+#609
+Mgr inż. Piotr Chodorowski
+Dr inż. Mirosław Chmiel
+#608
+Dr inż. Zbigniew Pruszowski
+Prof. dr hab. Słąwomir Kończak
+Dr inż. Edyta Wróbel
+Dr inż. Piotr Kowalik
+Dr hab. inż. Krzysztof Walczyński
+#607
+Mgr inż. Natalia Waczyńska-Niemiec
+Dr inż. Wojciech Filipowski
+#606
+Dr inż. Jerzy Uljanow
+#605
+Dr inż. Jerzy Fiołka
+#604
+Dr inż. Zenon Kidoń
+#603
+Dr hab. inż. Wojciech Kiernat
+#624
+Dr inż. Mariusz Frąckiewicz
+Dr inż. Krystian Radlak
+Mgr inż. Monika Mendrela
+#624a
+Dr inż. Małgorzata Kardyńska
+Mgr inż. Daria Kogut
+Mgr inż. Monika Kurasz
+Mgr inż. Karolika Kurasz
+Mgr inż. Krzyszot Łakomiec
+#625
+Dr inż. Krzysztof Jaskot
+Dr inż. Robert Bieda
+Laboratorium
+#626
+Dr inż. Tomasz Primke
+Mgr inż. Sara Alszer
+#627
+Mgr inż. Małgorzata Adamiec
+Mgr inż. Paweł Kuś
+Mgr inż. Magdalena Ługowska
+Mgr inż. Sebastian Wołkowicz
+#628
+Prof. dr hab.
+Bogdan Smołka
+#629
+Dr inż. Damian Borys
+Dr inż. Krzysztof Psiuk-Maksymowicz
+Mgr inż. Magdalena Ochab
+#629a
+Dr inż. Krzysztof Daniec
+Mgr inż. Karol Jędrasiak
+Mgr inż. Jan Kwiatkowski
+Dr inż. Roman Koteras
+Mgr inż. Paweł Iwaneszko
+Mgr inż. Dawid Sobel
+#630
+Laboratorium badawcze biologii obliczeniowej
+#631
+Dr inż. Marcin Pacholczyk
+#632
+Dr hab. inż. Henryk Palus Prof. Pol. Śl.
+#633
+Mgr Małgorzata Nierychlewska
+#634
+Dr hab. inż. Krzysztof Puszyński
+#635
+Mgr inż. Andrzej Fortuna
+#636
+Dr inż. Artur Bal
+Mgr inż. Bartosz Binias
+#623a
+Laboratorium komputerowe
+#730
+!sala 730-731
+Laboratorium systemów mikroprocesorowych
+#729
+Sala do ćwiczeń
+#728
+Dr inż. Wojciech Oliwa
+Dr inż. Grzegorz Wieczorek
+#727
+Sala do ćwiczeń
+#726
+Dr inż. Krzysztof Taborek
+#725
+Mgr inż. Dariusz Polok
+#724a
+#724
+Laboratorium miernictwa elektronicznego
+Laboratorium optoelektroniki
+Laboratorium techniki światłowodowej
+Laboratorium radiotechniki
+#723
+Dr inż. Mirosław Magnuski
+#722
+Pracownia kompatybilności elektromagnetycznej
+#721
+#720
+Z-ca dyrektora instytutu kierownik zakładu
+Dr hab. inż. Zdzisław Filus Prof. Pol. Śl.
+#719
+#718
+Pracownia Dyplomowa
+#717a
+Laboratorium komputerowe
+Zastosowanie narzędzi EDA/CAD w elektronice
+#716
+!sala 716-717
+Laboratorium komputerowe
+Zastosowanie narzędzi EDA/CAD w elektronice
+#715
+Laboratorium układów i systemów programowalnych
+#714
+Dyrektor instytutu
+Prof. dr hab. inż. Dariusz Kania
+#713
+Prof. dr hab. inż. Edward Hrynkiewicz
+#712
+Dr hab. inż. Zbigniew Rymarski Prof. Pol. Śl.
+#711
+Laboratorium elektroniki samochodowej
+#710
+Dr inż. Adam Kristof
+Dr inż. Jacek Chęciński
+#709
+Dr inż. Adam Popowicz (pokój 538)
+Mgr inż. Dominik Wybrańczyk
+Dr inż. Krzysztof Bernacki
+#708
+Dr inż. Tomasz Rudnicki
+Dr inż. Marcin Kubica
+#707
+Dr inż. Adam Milik
+#706
+Dr inż. Bernard Wyrwoł
+#705
+#704
+Dr inż. Andrzej Malcher
+#703
+Dr inż. Sławomir Lasota
+#733
+Laboratorium RTG
+Ciemnia
+#734
+Laboratorium aparatury rentgenowskiej
+#735
+Instytut Elektroniki
+Sekretariat
+Mgr inż. Adama Cudak-Tutajewicz
+#736
+Instytut Elektroniki
+Sekretariat
+Lic. Tatiana Niedziela
+Mgr Beata Bielawny
+#737
+Dyrektor
+Prof. dr hab. inż. Dariusz Kania
+#738
+#739
+#740
+Mgr inż. Michał Piela
+Mgr inż. Sebastian Porębski
+#741
+Dr hab. inż. Andrzej Hlawiczka, prof. Pol. Śl.
+Dr inż. Włodzimierz Szmelcer
+Doc. dr inż. Adam Blaszkowski
+Dr inż. Lucjan Karwan
+#742
+#743
+Dr inż. Adam Pawlak
+#744
+Consulting Room
+Pokój Konsultacji
+Sala seminaryjna
+#745
+Pprof. zw. dr hab. inż. Jacek Szuber
+#746
+Laboratorium
+#747
+Laboratorium miernictwa elektromedycznego
+Łucja Lewandowska
+#748
+Laboratorium elektroniki biomedycznej
+#749
+Mgr inż. Katarzyna Frątczak
+Mgr inż. Justyna Mika
+#732a
+Sala do ćwiczeń
+#732
+Sala komputerowa
+#830
+Laboratorium dydaktyczne
+#829
+Laboratorium komputerowe
+#828
+Dr inż. Henryk Josiński
+Dr inż. Adam Świtoński
+#827a
+Dr inż. Stanisław Wideł
+Mgr inż. Aleksander Cisek
+#827
+Laboratorium Sieci Komputerowych
+Laboratorium KWPUE
+#826
+Dr inż. Katarzyna Mościńska
+#825
+Laboratorium komputerowe
+#824
+Dr inż. Jan Machniewski
+#823
+Z-ca dyrektora instytutu
+Kierownik zakładu
+Dr hab. inż. Jacek Konopacki
+#822
+Laboratorium przetrwarzania sygnałów
+#821
+Inż. Tomasz Szymański
+#820
+Dr inż. Piotr Kłosowski
+Dr inż. Andrzej Kukiełka
+#819
+Dr inż. Dariusz Dziwoki
+#818
+Dr inż. Adam Dustor
+#817
+Dr inz. Łukasz Chruszczyk
+Mgr inż. Sebastian Tanich
+#816
+Dr hab. inż. Damian Grzechca, prof. Pol. Śl.
+#815
+Dr hab. inż. Tomasz Golonek
+#814
+#813
+Mgr inż. Krzysztof Hanzel
+Mgr inż. Krzysztof Paszek
+Mgr inż. Ernest Antolak
+#812
+Dr hab. inż. Andzej Pułka prof. Pol. Śl.
+#811
+#810
+Kierownik Zakładu Telekomunikacji
+Dr hab. inż. Jacek Izydorczyk
+Roman Krzanowski, Ph.D
+prosfesor wizytujący w Pol. Śl.
+#809
+Prof. dr hab. inż. Jerzy Rutkowski
+#808
+Dr inż. Tomasz Garbolino
+#807
+Dr inż. Tomasz Topa
+Dr inż. Artur Noga
+#806
+Dr inż. Maciej Surma
+#805
+Dr inż. DAriusz Wójcik
+#804a
+Laboratorium podstaw elektrotechniki
+#804
+Laboratorium podstaw elektrotechniki
+#803
+Dr hab. inż. Adam Ziębiński
+#831
+Dr inż. Tomasz Przybyła
+#832
+Stanowisko laboratoryjne sztucznej inteligencji
+#833
+Dr hab. inż. Tomasz Pander, prof. nadzwyczajny Pol. Śl.
+Stanowisko laboratoryjne analiza i przetrwarzanie obrazów CT
+#834
+Prof. dr hab. inż. Jacek Łęski, prof. zw. w Pol. Śl.
+Kierownik zakładu
+#835
+Dr hab inż. Marian Kotas, prof. nadzwyczajny Pol. Śl.
+Dr inż. Tomasz Moroń
+Stanowisko laboratoryczne akwizycja i analiza potencjałów mózgowych
+#836
+Dr inż. Jerzy Ihnatowicz
+Labaratorium środowiskowe
+Stanowisko 13
+#837
+Dr hab inż. Ewa Straszecka, prof. nadzwyczajny Pol. Śl.
+Stanowisko laboratoryczne 
+Monitorowania i symulacja czynności obiektów biologicznych
+#838
+Dr hab. inż. Robert Czabański
+#839
+Dr inż. Michał Jeżewski
+#840
+Laboratorium komputerowe
+#841
+Dr inż. Stanisław Pietraszek
+#842
+Laboratorium elektroniki biomedycznej
+#843
+Dr inż. Damian Bereska
+Dr inż. Zygmunt Kuś
+#830
+#921
+Laboratorium projektowania układów scalonych
+#921a
+Laboratorium dyplomantów
+Mgr inż. Jarosław Wrotniak
+#920
+Laboratorium centrale komutacyjne i urządzenia abonenckie
+#919
+!bez numeru, logicznie ten wychodzi
+Laboratorium APTIV
+#918a
+Dr inż. Wojciech Sułek
+Dr inż. Marcin Kucharczyk
+#918
+Laboratorium procesorów sygnałowych
+#917
+Laboratorium Techniki Antenowej i Mikrofalowej
+Laboratorium Systemów Łączności Bezprzewodowej
+#916
+Dr inż. Jerzy Wojtuszek
+#915
+Dr inż. Leszek Dziczkowski
+#914a
+Mgr inż. Andrzej Czyż
+#914
+Laboratorium Urządzeń Mobilnych
+#913
+Dr inż. Wojciech Mielczarek
+#912
+!912-911
+Dr inż. Dariusz Caban
+Mgr inż. Michał Sawicki
+Dr inż. Michał Maćkowski
+#910
+Laboratorium Urządzeń Mobilnych
+#909
+Pracownia dyplomantów
+#908
+Dr inż. Mirosław Skrzewski
+#907
+Dr inż. Jarosław Flak
+#906
+Dr hab. inż. Adam Domański
+Mgr inż. Dariusz Marek
+Mgr inż. Jakub Szyguła
+#905
+Roman Krzanowski, Ph. D
+profesor wizytujący w Pol. Śl.
+#904
+Dr hab. Piotr Zawadzki
+#903
+Sala do ćwiczeń
+#922
+#923
+Laboratorium
+#924
+Pomieszczenie techniczne
+Mgr inż. Wojciech Bensz
+#925
+Laboratorium
+#926
+Prof. zw. dr hab. inż. Ryszard Gessing
+#927
+Dr inż. Roman Czyba
+#928
+Dr hab. inż. Adam Gałuszka
+Profesor Politechniki Śląskiej
+#929
+Dr inż. Rafał Grygieł
+Dr inż. Krzysztof Skrzypczyk
+#930
+Prof. dr hab. inż. Marian Błachuta
+#931
+Zakład Sterowania i Robotyki
+Sekretariat
+mgr Marzena Dudek
+#932
+Dr inż. Krzysztof Simek
+#933
+Dr hab. inż. Artur Babiarz, prof. Pol. Śl.
+#934
+Laboratorium Systemów Wbudowanych
+#935
+Laboratorium
+#935a
+Prof. dr hab. inż. Adam Czornik
+Dr hab. inż. Michał Niezabitowski
+#937
+Prof. dr hab. inż. Aleksander Nawrat

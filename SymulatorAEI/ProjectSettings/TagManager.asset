@@ -11,6 +11,9 @@ TagManager:
   - RaycastingPlane
   - RayDetectionPlane
   - InteractableButton
+  - Waypoint
+  - WaypointConnection
+  - DataController
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - PlayerModel
   - 
   - 
   - 

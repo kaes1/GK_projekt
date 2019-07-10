@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
@@ -12,36 +14,83 @@ public class GameController : MonoBehaviour
         Running,
         Paused
     }
+    //Current game state.
     private GameState gameState = GameState.Running;
+
+    //Data Controller.
+    private DataController dataController;
+
+    //Player GameObject
+    private GameObject Player;
+    //Background audio source.
+    private AudioSource BackGroundAudioSource;
+    //Object currently selected for interaction.
+    private GameObject selectedObject;
 
     //UI displayed when game is paused via Escape.
     public GameObject PauseMenuUI;
-
+    public GameObject MainPauseMenuUI;
+    public GameObject ChooseRoomMenuUI;
     //UI displayed when something interactable is selected.
     public GameObject InteractionPromptUI;
     public TextMeshProUGUI InteractionPromptText;
-
     //UI for displaying details of object.
     public GameObject DetailsUI;
     public TextMeshProUGUI DetailsMainText;
     public TextMeshProUGUI DetailsSecondaryText;
+    //UI for displaying currently chosen room.
+    public GameObject ChosenRoomUI;
+    public TextMeshProUGUI ChosenRoomText;
 
-    //Object currently selected for interaction.
-    private GameObject selectedForInteraction;
 
-    //Background Audio Control
-    public AudioSource BackGroundAudioSource;
+
+    //Currently chosen room that the player wants to go to.
+    private RoomInformation ChosenRoom;
+    //Waypoint corresponding to currently chosen room.
+    private Waypoint ChosenRoomWaypoint;
+
+
+
+
+    //All waypoints.
+    private List<Waypoint> Waypoints = new List<Waypoint>();
+    //Line Renderer for drawing path to chosen room.
+    private LineRenderer lineRenderer;
 
     void Start()
     {
+
+        //Lock framerate to 60.
+        //StartCoroutine(LockFramerate(60));
+
+        //Find Data Controller.
+        dataController = GameObject.FindGameObjectWithTag("DataController").GetComponent<DataController>();
+        //Find player GameObject and background audio source.
+        Player = GameObject.FindGameObjectWithTag("Player");
+        BackGroundAudioSource = Player.GetComponent<AudioSource>();
+        //Find waypoints.
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Waypoint"))
+            Waypoints.Add(gameObject.GetComponent<Waypoint>());
+        //Find LineRenderer component.
+        lineRenderer = GetComponent<LineRenderer>();
+        //Resume the game.
         ResumeGame();
+        //Play background audio.
         BackGroundAudioSource.Play();
+        //Initially choose no room.
+        ChooseRoom("");
     }
+
+    //private IEnumerator LockFramerate(int rate)
+    //{
+        //yield return new WaitForSeconds(1);
+        //QualitySettings.vSyncCount = 1;
+        //Application.targetFrameRate = rate;
+    //}
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
             switch(gameState)
             {
                 case GameState.Running:
@@ -51,33 +100,128 @@ public class GameController : MonoBehaviour
                     ResumeGame();
                     break;
             }
-        }
+
+        if(ChosenRoom != null && ChosenRoomWaypoint != null)
+            DrawPathTo(ChosenRoomWaypoint);
     }
+
+    private void DrawPathTo(Waypoint target)
+    {
+        List<Waypoint> waypointsPath = FindShortestPathTo(target);
+        lineRenderer.positionCount = waypointsPath.Count + 1 /*player position*/ - 1 /*skipping first waypoint*/;
+        lineRenderer.SetPosition(0, Player.transform.position /*+ Player.transform.forward*/);
+        for (int i = 1; i < waypointsPath.Count; i++)
+            lineRenderer.SetPosition(i, waypointsPath[i].transform.position);
+    }
+
+    private List<Waypoint> FindShortestPathTo(Waypoint target)
+    {
+        //Initial node is the closest one to player.
+        Waypoint source = FindClosestWaypointToPlayer();
+        //Shortest path from source to target;
+        List<Waypoint> shortestPath = new List<Waypoint>();
+        //Return only target if source and target are the same.
+        if (target == source)
+        {
+            shortestPath.Add(target);
+            return shortestPath;
+        }
+            
+        //Dijkstra algorithm.
+        var distances = new Dictionary<Waypoint, float>();
+        var previous = new Dictionary<Waypoint, Waypoint>();
+        List<Waypoint> Q = new List<Waypoint>();
+        foreach (Waypoint w in Waypoints)
+        {
+            distances[w] = Mathf.Infinity;
+            previous[w] = null;
+            Q.Add(w);
+        }
+        distances[source] = 0;
+        while (Q.Count > 0)
+        {
+            float minDistance = Mathf.Infinity;
+            Waypoint current = null;
+            foreach (Waypoint w in Q)
+                if (distances[w] < minDistance)
+                {
+                    minDistance = distances[w];
+                    current = w;
+                }
+            Q.Remove(current);
+            if (current == target || current == null)
+                break;
+
+
+            foreach (Waypoint v in current.Neighbours)
+                if (v != null && Q.Contains(v))
+                {
+                    float alt = distances[current] + Vector3.Distance(current.transform.position, v.transform.position);
+                    if (alt < distances[v])
+                    {
+                        distances[v] = alt;
+                        previous[v] = current;
+                    }
+                }
+        }
+
+        //Read shortest path from source to target.
+        Waypoint u = target;
+        if (previous[u] || u == source)
+            while (u)
+            {
+                shortestPath.Insert(0, u);
+                u = previous[u];
+            }
+        
+        return shortestPath;
+    }
+
+    private Waypoint FindClosestWaypointToPlayer()
+    {
+        Waypoint closestWaypoint = null;
+        float closestDistance = Mathf.Infinity;
+        foreach (Waypoint waypoint in Waypoints)
+        {
+            float distance = Vector3.Distance(Player.transform.position, waypoint.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestWaypoint = waypoint;
+            }
+        }
+        return closestWaypoint;
+    }
+
+
+
 
     public void ResumeGame()
     {
         PauseMenuUI.SetActive(false);
+        MainPauseMenuUI.SetActive(false);
+        ChooseRoomMenuUI.SetActive(false);
+        BackGroundAudioSource.UnPause();
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         gameState = GameState.Running;
-
-        BackGroundAudioSource.UnPause();
     }
 
     public void PauseGame()
     {
         PauseMenuUI.SetActive(true);
+        MainPauseMenuUI.SetActive(true);
+        ChooseRoomMenuUI.SetActive(false);
+        BackGroundAudioSource.Pause();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         gameState = GameState.Paused;
-
-        BackGroundAudioSource.Pause();
     }
 
     public void GoToMainMenu()
     {
         Debug.Log("Going to MainMenu!");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
@@ -86,41 +230,57 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    public void ClearInteractable()
+    public void ChooseRoom(string roomID)
+    {
+        ChosenRoom = null;
+        ChosenRoomWaypoint = null;
+        ChosenRoomText.text = "No room chosen\nPress 'ESC' to pause\nand choose a room.";
+
+        if (dataController.RoomInformationDictionary.Keys.Contains(roomID))
+        {
+            ChosenRoom = dataController.RoomInformationDictionary[roomID];
+            ChosenRoomText.text = ChosenRoom.roomID + "\n" + ChosenRoom.details;
+            ChosenRoomWaypoint = null;
+            foreach (Waypoint w in Waypoints)
+                if (w.roomID == roomID)
+                    ChosenRoomWaypoint = w;
+        }
+    }
+
+    private void ClearInteractable()
     {
         HideInteractionPrompt();
         HideDetails();
         //If previously selected something, disable previous highlighting and hide interaction prompt and details.
-        if (selectedForInteraction != null)
+        if (selectedObject != null)
         {
-            if (selectedForInteraction.GetComponent<Highlight>() != null)
-                selectedForInteraction.GetComponent<Highlight>().HighlightEnd();
-            selectedForInteraction = null;
+            if (selectedObject.GetComponent<Highlight>() != null)
+                selectedObject.GetComponent<Highlight>().HighlightEnd();
+            selectedObject = null;
         }
     }
 
-    public void SelectInteractable(GameObject gameObject)
+    public void SelectObject(GameObject newObject)
     {
         //If selecting same thing, don't do anything.
-        if (gameObject == selectedForInteraction)
+        if (newObject == selectedObject)
             return;
         //Clear previous selection.
         ClearInteractable();
         //If object is interactable highlight it, show interaction prompt and remember selected object.
-        if (gameObject != null && gameObject.tag.Contains("Interactable"))
+        if (newObject != null && newObject.tag.Contains("Interactable"))
         {
-            if (gameObject.GetComponent<Highlight>() != null)
-                gameObject.GetComponent<Highlight>().HighlightStart();
-            DisplayInteractionPrompt(gameObject);
-            selectedForInteraction = gameObject;
+            if (newObject.GetComponent<Highlight>() != null)
+                newObject.GetComponent<Highlight>().HighlightStart();
+            DisplayInteractionPrompt(newObject);
+            selectedObject = newObject;
         }
     }
 
     private void DisplayInteractionPrompt(GameObject gameObject)
     {
-        if (gameObject != null)
-            if (gameObject.GetComponent<Interactable>() != null)
-                InteractionPromptText.text = gameObject.GetComponent<Interactable>().GetInteractPromptText();
+        if (gameObject != null && gameObject.GetComponent<Interactable>() != null)
+            InteractionPromptText.text = gameObject.GetComponent<Interactable>().GetInteractPromptText();
         InteractionPromptUI.SetActive(true);
     }
 
@@ -129,11 +289,19 @@ public class GameController : MonoBehaviour
         InteractionPromptUI.SetActive(false);
     }
 
-    public void DisplayDetails(string mainText, string secondaryText)
+    public void DisplayDetailsForRoom(string roomID)
     {
-        DetailsMainText.text = mainText;
-        DetailsSecondaryText.text = secondaryText;
-
+        if (dataController.RoomInformationDictionary.Keys.Contains(roomID))
+        {
+            RoomInformation roomInfo = dataController.RoomInformationDictionary[roomID];
+            DetailsMainText.text = roomInfo.roomID;
+            DetailsSecondaryText.text = roomInfo.details;
+        }
+        else
+        {
+            DetailsMainText.text = "404";
+            DetailsSecondaryText.text = "Not Found";
+        }
         HideInteractionPrompt();
         DetailsUI.SetActive(true);
     }
@@ -145,8 +313,8 @@ public class GameController : MonoBehaviour
 
     public void InteractWithSelected()
     {
-        if (selectedForInteraction != null)
-            if (selectedForInteraction.GetComponent<Interactable>() != null)
-                selectedForInteraction.GetComponent<Interactable>().Interact();
+        if (selectedObject != null)
+            if (selectedObject.GetComponent<Interactable>() != null)
+                selectedObject.GetComponent<Interactable>().Interact();
     }
 }

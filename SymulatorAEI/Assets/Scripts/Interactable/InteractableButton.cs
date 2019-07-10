@@ -6,15 +6,15 @@ using UnityEngine.Events;
 public class InteractableButton : MonoBehaviour, Interactable
 {
     public UnityEngine.Events.UnityEvent OnInteract;
+    public string interactPromtText = "Press E to Interact";
 
     public void Interact()
     {
-        Debug.Log("Interact() in button called!");
         OnInteract.Invoke();
     }
 
     public string GetInteractPromptText()
     {
-        return "Press E to Interact";
+        return interactPromtText;
     }
 }

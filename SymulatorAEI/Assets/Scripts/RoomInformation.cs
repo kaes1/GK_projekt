@@ -7,5 +7,5 @@ public class RoomInformation
 {
     public string roomID;
     [TextArea]
-    public string plaqueText;
+    public string details;
 }

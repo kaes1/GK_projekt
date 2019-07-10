@@ -12,7 +12,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject lookedAtObject;
 
-
     private GameController gameController;
 
     void Awake()
@@ -28,13 +27,10 @@ public class PlayerInteraction : MonoBehaviour
         //Use Raycasting to get object hit.
         GameObject objectHit = null;
         objectHit = CustomRaycasting.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, distanceToSee);
-        //Debug.Log("Player is looking at: " + objectHit);
         //If looking at something new, tell game controller what is currently selected.
         if (objectHit != lookedAtObject)
         {
-            gameController.ClearInteractable();
-            if (objectHit != null && objectHit.tag.Contains("Interactable"))
-                gameController.SelectInteractable(objectHit);
+            gameController.SelectObject(objectHit);
             lookedAtObject = objectHit;
         } 
     
