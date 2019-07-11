@@ -13,7 +13,6 @@ public class CustomRaycasting
 
         foreach (GameObject planeObject in allPlanes)
         {
-            //Debug.DrawRay(planeObject.transform.position, planeObject.transform.up.normalized * maxDistance, Color.red);
             //Mathematical plane.
             Plane plane = new Plane(planeObject.transform.up.normalized, planeObject.transform.position);
 

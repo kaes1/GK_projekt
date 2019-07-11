@@ -48,8 +48,10 @@ public class GameController : MonoBehaviour
     private RoomInformation ChosenRoom;
     //Waypoint corresponding to currently chosen room.
     private Waypoint ChosenRoomWaypoint;
+    
+    List<Waypoint> waypointsPathToRoom;
 
-
+    Waypoint closestWaypoint;
 
 
     //All waypoints.
@@ -59,10 +61,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-
-        //Lock framerate to 60.
-        //StartCoroutine(LockFramerate(60));
-
         //Find Data Controller.
         dataController = GameObject.FindGameObjectWithTag("DataController").GetComponent<DataController>();
         //Find player GameObject and background audio source.
@@ -81,17 +79,10 @@ public class GameController : MonoBehaviour
         ChooseRoom("");
     }
 
-    //private IEnumerator LockFramerate(int rate)
-    //{
-        //yield return new WaitForSeconds(1);
-        //QualitySettings.vSyncCount = 1;
-        //Application.targetFrameRate = rate;
-    //}
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            switch(gameState)
+            switch (gameState)
             {
                 case GameState.Running:
                     PauseGame();
@@ -101,17 +92,71 @@ public class GameController : MonoBehaviour
                     break;
             }
 
-        if(ChosenRoom != null && ChosenRoomWaypoint != null)
+        if (ChosenRoom != null && ChosenRoomWaypoint != null)
             DrawPathTo(ChosenRoomWaypoint);
+    }
+
+    public void ChooseRoom(string roomID)
+    {
+        ChosenRoom = null;
+        ChosenRoomWaypoint = null;
+        ChosenRoomText.text = "No room chosen\nPress 'ESC' to pause\nand choose a room.";
+
+        if (dataController.RoomInformationDictionary.Keys.Contains(roomID))
+        {
+            ChosenRoom = dataController.RoomInformationDictionary[roomID];
+            ChosenRoomText.text = ChosenRoom.roomID + "\n" + ChosenRoom.details;
+            ChosenRoomWaypoint = null;
+            foreach (Waypoint w in Waypoints)
+                if (w.roomID == roomID)
+                    if (ChosenRoomWaypoint == null
+                        || Vector3.Distance(w.transform.position, Player.transform.position) < Vector3.Distance(ChosenRoomWaypoint.transform.position, Player.transform.position))
+                        ChosenRoomWaypoint = w;
+
+        }
     }
 
     private void DrawPathTo(Waypoint target)
     {
-        List<Waypoint> waypointsPath = FindShortestPathTo(target);
-        lineRenderer.positionCount = waypointsPath.Count + 1 /*player position*/ - 1 /*skipping first waypoint*/;
-        lineRenderer.SetPosition(0, Player.transform.position /*+ Player.transform.forward*/);
-        for (int i = 1; i < waypointsPath.Count; i++)
-            lineRenderer.SetPosition(i, waypointsPath[i].transform.position);
+        Waypoint currentClosestWaypoint = FindClosestWaypointToPlayer();
+        if (currentClosestWaypoint == target)
+        {
+            lineRenderer.positionCount = 0;
+            return;
+        }
+
+
+        if (closestWaypoint != currentClosestWaypoint)
+        {
+            closestWaypoint = currentClosestWaypoint;
+            if (waypointsPathToRoom != null && currentClosestWaypoint == waypointsPathToRoom[0])
+            {
+                //Moving along the right path.
+                waypointsPathToRoom.RemoveAt(0);
+            }
+            else
+            {
+                waypointsPathToRoom = FindShortestPathTo(target);
+            } 
+        }
+            
+        if (waypointsPathToRoom.Count > 6)
+        {
+            lineRenderer.positionCount = 6;
+            lineRenderer.SetPosition(0, Player.transform.position);
+            for (int i = 1; i < 6; i++)
+                lineRenderer.SetPosition(i, waypointsPathToRoom[i].transform.position);
+        }
+        else
+        {
+            lineRenderer.positionCount = waypointsPathToRoom.Count;
+            lineRenderer.SetPosition(0, Player.transform.position);
+            for (int i = 1; i < waypointsPathToRoom.Count; i++)
+                lineRenderer.SetPosition(i, waypointsPathToRoom[i].transform.position);
+        }
+
+
+
     }
 
     private List<Waypoint> FindShortestPathTo(Waypoint target)
@@ -126,7 +171,7 @@ public class GameController : MonoBehaviour
             shortestPath.Add(target);
             return shortestPath;
         }
-            
+
         //Dijkstra algorithm.
         var distances = new Dictionary<Waypoint, float>();
         var previous = new Dictionary<Waypoint, Waypoint>();
@@ -168,12 +213,12 @@ public class GameController : MonoBehaviour
         //Read shortest path from source to target.
         Waypoint u = target;
         if (previous[u] || u == source)
-            while (u)
+            while (u != null)
             {
                 shortestPath.Insert(0, u);
                 u = previous[u];
             }
-        
+
         return shortestPath;
     }
 
@@ -230,22 +275,7 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    public void ChooseRoom(string roomID)
-    {
-        ChosenRoom = null;
-        ChosenRoomWaypoint = null;
-        ChosenRoomText.text = "No room chosen\nPress 'ESC' to pause\nand choose a room.";
 
-        if (dataController.RoomInformationDictionary.Keys.Contains(roomID))
-        {
-            ChosenRoom = dataController.RoomInformationDictionary[roomID];
-            ChosenRoomText.text = ChosenRoom.roomID + "\n" + ChosenRoom.details;
-            ChosenRoomWaypoint = null;
-            foreach (Waypoint w in Waypoints)
-                if (w.roomID == roomID)
-                    ChosenRoomWaypoint = w;
-        }
-    }
 
     private void ClearInteractable()
     {

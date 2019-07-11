@@ -90,7 +90,7 @@ public class ElevatorShaft : MonoBehaviour
                 //Move towards target floor.
                 MoveTowardsTargetFloor();
                 //If arrived at target floor, open the doors.
-                if (Mathf.Abs(currentFloor - targetFloor) < 0.0000001)
+                if (Mathf.Abs(currentFloor - targetFloor) < 0.0001)
                 {
                     CurrentElevatorState = ElevatorState.DoorsOpening;
                     Player.GetComponent<CharacterController>().enabled = true;
@@ -98,7 +98,7 @@ public class ElevatorShaft : MonoBehaviour
                     elevatorMovesAudioSource.Stop();
                     elevatorArrivedAudioSource.Play();
                 }
-                if(!elevatorMovesAudioSource.isPlaying)
+                else if(!elevatorMovesAudioSource.isPlaying)
                 {
                     elevatorMovesAudioSource.Play();
                 }

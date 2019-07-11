@@ -27,13 +27,6 @@ public class Reflection : MonoBehaviour
         UpdateCubemap(63);
     }
 
-    //void OnDisable()
-    //{
-    //    DestroyImmediate(cam);
-    //    DestroyImmediate(renderTexture);
-    //    DestroyImmediate(_MaterialShader);
-    //}
-
     void LateUpdate()
     {
         if (oneFacePerFrame)

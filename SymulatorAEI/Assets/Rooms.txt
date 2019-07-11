@@ -133,6 +133,9 @@ Izabela Kulczyna
 - Makrokierunek S1 i S2
 - ERASMUS
 - Studia doktoranckie
+#15
+#16
+#17
 #18
 #DE
 Laboratorium
@@ -657,7 +660,8 @@ Mgr inż. Bartosz Binias
 #623a
 Laboratorium komputerowe
 #730
-!sala 730-731
+Laboratorium systemów mikroprocesorowych
+#731
 Laboratorium systemów mikroprocesorowych
 #729
 Sala do ćwiczeń
